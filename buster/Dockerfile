@@ -55,6 +55,7 @@ RUN apt-get install -qy autotools-dev autoconf automake libtool pkg-config dh-sy
 RUN git clone -b stable https://github.com/knxd/knxd.git
 
 RUN cd knxd \
+     && git checkout deb \
      && ./bootstrap.sh \
      && ./configure --disable-systemd --enable-tpuart --enable-usb --enable-eibnetipserver --enable-eibnetip --enable-eibnetserver --enable-eibnetiptunnel \
      && mkdir -p src/include/sys && ln -s /usr/lib/bcc/include/sys/cdefs.h src/include/sys \
