@@ -41,7 +41,7 @@ RUN echo APT::Install-Suggests "0"; >> /etc/apt/apt.conf
 ############################################################
 
 RUN apt update
-RUN apt dist-upgrade -qy
+RUN apt full-upgrade -qy
 
 ############################################################
 # Install Software: knxd
